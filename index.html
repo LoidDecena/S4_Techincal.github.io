@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=	, initial-scale=1.0">
+    <title>Technical Summative 4</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        #restaurant-name {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #7694bb;
+            border: 1px solid #7694bb;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #main-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff9853;
+            color: rgb(255, 0, 0);
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #main-menu:hover {
+            background-color: #ffe605;
+        }
+
+        #food-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 500px;
+        }
+        
+        .food-box {
+            width: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f9fa; 
+            border: 1px solid #ced4da; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+            margin: 10px;
+            position: relative;
+        }
+
+        .food-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px; 
+        }
+
+        .food-box p {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #343a40; 
+        }
+
+        .food-description {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .food-box:hover .food-description {
+            display: flex;
+        }
+
+        .more-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .more-button:hover {
+            background-color: #0056b3;
+        }
+
+        #food-info {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            margin: 70px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #food-info .info-box {
+            width: 80%;
+            max-width: 450px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        #food-info .info-box img {
+            width: 80%;
+            height: auto;
+        }
+
+        .food-price,
+        .food-category,
+        .food-descript {
+            display: none;
+        }
+
+        .food-box:hover .more-button {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="restaurant-name">Lloyd's Cafe</div>
+    <button id="main-menu">Main Menu</button>
+
+    <div id="food-container">
+        <div class="food-box">
+            <p>Fries</p>
+            <img src="fries.jpg" alt="Food 1">
+            <div class="food-description">
+                <p>French Fries</p>
+                <p class="food-descript">Fries, also known colloquially as French fries, are a delectable culinary creation beloved across the globe, revered for their crisp exterior, fluffy interior, and unparalleled ability to tantalize the taste buds.</p>
+                <p class="food-price">50 Php</p>
+                <p class="food-category">Main Course</p>
+                <button class="more-button">More</button>
+            </div>
+        </div>
+        <div class="food-box">
+            <p>Burger</p>
+            <img src="burger.jpg" alt="Food 2">
+            <div class="food-description">
+                <p>Cheese Burger</p>
+                <p class="food-descript">A burger, an iconic culinary marvel cherished worldwide, is a gastronomic masterpiece that embodies the essence of comfort, convenience, and culinary creativity.</p>
+                <p class="food-price">80 Php</p>
+                <p class="food-category">Main Course</p>
+                <button class="more-button">More</button>
+            </div>
+        </div>
+        <div class="food-box">
+            <p>Pizza</p>
+            <img src="pizza.jpg" alt="Food 3">
+            <div class="food-description">
+                <p>Classic Pizza</p>
+                <p class="food-descript">Pizza is a delectable culinary creation that has achieved global acclaim as one of the most beloved and iconic dishes in the realm of gastronomy.</p>
+                <p class="food-price">150 Php</p>
+                <p class="food-category">Main Course</p>
+                <button class="more-button">More</button>
+            </div>
+        </div>
+        <div class="food-box">
+            <p>Pasta</p>
+            <img src="pasta.jpg" alt="Food 4">
+            <div class="food-description">
+                <p>Classic Pasta</p>
+                <p class="food-descript">Pasta is a culinary marvel that stands as a cornerstone of Italian cuisine and has captivated palates worldwide with its versatility, comforting textures, and endless possibilities for creativity.</p>
+                <p class="food-price">150 Php</p>
+                <p class="food-category">Main Course</p>
+                <button class="more-button">More</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="food-info">
+        <div class="info-box">
+            <h2 id="food-name"></h2>
+            <img id="food-image" src="" alt="">
+            <p id="food-price"></p>
+            <p id="food-category"></p>
+            <p id="food-description"></p>
+        </div>
+    </div>
+
+    <script>
+        var foodBoxes = document.querySelectorAll('.food-box');
+
+        for (var i = 0; i < foodBoxes.length; i++) {
+            foodBoxes[i].addEventListener('mouseover', function() {
+                this.querySelector('.food-description').style.opacity = '1';
+            });
+
+            foodBoxes[i].addEventListener('mouseout', function() {
+                this.querySelector('.food-description').style.opacity = '0';
+            });
+        }
+
+        var mainMenuButton = document.getElementById('main-menu');
+
+        mainMenuButton.addEventListener('click', function() {
+            var foodInfo = document.getElementById('food-info');
+            if (foodInfo.style.display === 'flex') {
+                foodInfo.style.display = 'none';
+            }
+        });
+
+        var moreButtons = document.querySelectorAll('.more-button');
+
+        for (var i = 0; i < moreButtons.length; i++) {
+            moreButtons[i].addEventListener('click', function() {
+                var foodBox = this.parentElement.parentElement;
+                var foodName = foodBox.querySelector('p').textContent;
+                var foodImage = foodBox.querySelector('img').src;
+                var foodPrice = foodBox.querySelector('.food-price').textContent;
+                var foodCategory = foodBox.querySelector('.food-category').textContent;
+                var foodDescription = this.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+
+                document.getElementById('food-name').textContent = foodName;
+                document.getElementById('food-image').src = foodImage;
+                document.getElementById('food-price').textContent = foodPrice;
+                document.getElementById('food-category').textContent = foodCategory;
+                document.getElementById('food-description').textContent = foodDescription;
+
+                document.getElementById('food-info').style.display = 'flex';
+            });
+        }
+    </script>
+</body>
+</html>
